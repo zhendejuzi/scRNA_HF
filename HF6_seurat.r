@@ -374,9 +374,9 @@ DF.combined <- FindNeighbors(DF.combined, reduction = "pca", dims = 1:npc)
 DF.combined <- FindClusters(DF.combined, resolution = 0.25)
 DimPlot(object = DF.combined, reduction = "umap",label = TRUE,label.size=5,pt.size = 0.2,group.by="project")
 
-#######################################################################
-#########################calculate the PCT#############################
-#######################################################################
+#########################################################################################
+#########################calculate the PCT (expression rate)#############################
+#########################################################################################
 DF.list <- SplitObject(DF, split.by = "group")
 PercentAbove <- function(x, threshold) {return(length(x = x[x > 0]) / length(x = x))}
 AVG=list()
